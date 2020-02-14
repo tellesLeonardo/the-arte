@@ -1,10 +1,76 @@
-<h3>Parabéns...</h3><strong>por vir compartilhar sua obra com a gente</strong>
+<style>
+div.cor_ideal {
+    background: #eee6ff;
+    <%# background: #ddccff; %>
+    border: 2px solid #ddccff;
+}
 
-<%=  form_for @changeset, Routes.page_path(@conn, :create), fn f -> %>
-    <%= text_input f, :nome_img,placeholder: "coloque o nome da imagem", id: "nome_img", class: "form-control", required: ""%>
-    <%= text_input f, :descricao,placeholder: "coloque a descricao da imagem", id: "descricao", class: "form-control" %> 
-    <%= text_input f, :link_img,placeholder: "coloque o link da imagem", id: "link_img", class: "form-control" %>
-    <%= text_input f, :nome_art,placeholder: "coloque o nome do artista", default: "leo",id: "nome_art", class: "form-control" %> 
+div.position{
+    width:100%;
+    height:100%;
+}
 
-    <%= submit "enviar informações", class: "btn btn-primary" %>
-<%end %>
+div.position img{
+    position: absolute; 
+    width:100%;
+    height:100%;
+}
+
+div.relative{
+    margin: 0 auto;
+}
+
+div.container4 {
+    height: 10em;
+    position: relative }
+div.container  {
+    margin: 0;
+    <%# background: yellow; %>
+    position: absolute;
+    top: 350%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) }
+
+</style>
+
+
+
+
+  
+
+
+<div class="position">
+<img src="https://images3.alphacoders.com/218/thumb-1920-218717.jpg">
+
+    <div class=container4>
+        <div class="container">
+        <div class ="jumbotron cor_ideal col-12">
+        <dt><h1>Coloque sua Obra<h1></dt>
+            <dd>venha compartilhar sua obra conosco</dd>
+        <br>
+
+        <label><h6>informações:</h6></label>
+        <%=  form_for @changeset, Routes.page_path(@conn, :create), fn f -> %>
+            <label>Nome da imagem *</label>
+            <%= text_input f, :nome_img,placeholder: "coloque o nome da imagem", id: "nome_img", class: "form-control", required: ""%>
+            <label>Descricao *</label>       
+            <%= text_input f, :descricao,placeholder: "coloque a descricao da imagem", id: "descricao", class: "form-control"%> 
+            <label>Imagem *</label>
+            <%= text_input f, :link_img,placeholder: "coloque o link da imagem", id: "link_img", class: "form-control", required: ""%>
+            <label>Nome artístico *</label>
+            <%= text_input f, :nome_art,placeholder: "coloque o nome do artista",id: "nome_art", class: "form-control" %> 
+            <%= submit "enviar informações", class: "btn btn-success" %>
+        <%end %>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    </div>
+    <%# <img src="https://images3.alphacoders.com/218/thumb-1920-218717.jpg"> %>
+</div> 

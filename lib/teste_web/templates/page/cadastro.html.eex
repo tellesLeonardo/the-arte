@@ -6,28 +6,101 @@ div.margem {
     height: 1000px;
     border: 1px solid #000;
 }
+
+.full-height {
+    position: absolute;
+    width: 30%;
+    height: 110%;
+    border: 2px solid #ddccff;
+}
+
+div.cor_ideal {
+    background: #eee6ff;
+    <%# background: #ddccff; %>
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.img{
+    width: 70%;
+    height: 100%;
+    float: right;
+}
+.super{
+    width: 100%;
+    height: 100%;
+}
+
+.img img{
+    width: 100%;
+    height: 100%;
+}
+
 </style>
 
-cadastro
-<div class="margem" >
-<%=  form_for @changeset, Routes.page_path(@conn, :save_cad), fn cad -> %>
-    <%= text_input cad, :nome_cad ,placeholder: "holder", id: "nome",class: "form-control", required: "" %>
-    <%= text_input cad, :senha_cad ,placeholder: "holder",id: "senha",class: "form-control",minlength: 6, required: "coloca" %>
+<div class="super">
 
-    <%= submit "enviar informações", class: "btn btn-primary" %>
+<div class="full-height cor_ideal">
+    <div class="container">
+        <strong><%= @conteudo%> 
+        </strong>
+    </div> 
+
+    
+        <div class ="jumbotron cor_ideal horizontal">
+        <label><h3>cadastro</h3></label>
+
+    <%=  form_for @changeset, Routes.page_path(@conn, :save_cad),[multipart: true],fn cad -> %>
+        <div class="form-group">
+            <label>Nome *</label>
+            <%= text_input cad, :nome_cad , id: "nome",class: "form-control", required: "" %>
+        </div>
+
+        <div class="form-group">
+            <label>Senha *</label>
+            <%= password_input cad, :senha_cad ,id: "senha",class: "form-control" , minlength: 5, required: "coloca"%>
+        </div>
+
+        <div class="form-group">
+            <label>email</label>
+            <%= email_input cad, :email_cad ,id: "email",class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+            <label>nome de artista *</label>
+            <%= text_input cad, :nome_art_cad ,id: "nome_art",class: "form-control" , required: ""%>
+        </div>
+
+        <div class="form-group">
+            <label>descricao</label>
+            <%= text_input cad, :descricao_cad ,id: "descricao",class: "form-control" %>
+        </div>
+
+        <%# <div class="form-group">
+            <label>miniatura</label>
+            <%= file_input cad, :miniatura_cad ,id: "miniatura",class: "form-control" %>
+        <%# </div> %>
+
+        <div class="form-group">
+            <label>miniatura *</label>
+            <%= text_input cad, :miniatura_cad ,id: "miniatura",class: "form-control" , required: ""%>
+        </div>
+        
+        <div class="form-group">
+            <button type="submit" class="btn btn-success">envio</button>
+            <button type="button" class="btn btn-secondary" onClick= "redirect()">login</button>
+
+        </div>
+
+        <% end %>
+    </div >
+</div>
 
 
-  <% end %>
+    <div class="img">
+        <%# <img src="https://wallpapercave.com/wp/wp3122115.jpg"> %>
+        <img src="https://c.wallhere.com/photos/bb/38/2560x1600_px_abstract_face_Jared_Nickerson_profile_purple_Background-782216.jpg!d">
+    </div>
 
-<div>
-
-
-<a href="/login">login</a>
-
-
-
-
-
+</div>
 
 
 <%# <div class="flex flex-column justify-content-center">
@@ -42,3 +115,15 @@ cadastro
         <img src="//www.000webhost.com/static/default.000webhost.com/images/cpanel-login-v2/google-social-new.svg" alt="logotipo do google" class="log-in-form-v3-right-row__image log-in-form-v3-right-row__image--google">
     </a>
 </div> %>
+<script type="text/javascript">
+    function redirect()
+{
+    location.href="/"
+}
+
+
+    function envio(conteudo)
+    {
+        alert(conteudo)
+    }
+</script>

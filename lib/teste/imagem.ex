@@ -2,7 +2,7 @@ defmodule Teste.Imagem do
   use Ecto.Schema
   import Ecto.Changeset
 
-  schema "imagem" do
+  schema "imagens" do
     field :descricao, :string
     field :link_img, :string
     field :nome_img, :string
@@ -15,7 +15,6 @@ defmodule Teste.Imagem do
   def changeset(imagem, attrs) do
     imagem
     |> cast(attrs, [:link_img, :descricao, :nome_img])
-    |> validate_required([:link_img, :nome_img])
+    |> validate_required([:link_img, :descricao, :nome_img])
   end
-  
 end

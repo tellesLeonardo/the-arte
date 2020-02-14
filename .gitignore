@@ -35,4 +35,6 @@ npm-debug.log
 /assets/
 /.elixir_ls/
 /test/
-/mix.lock/
+mix.lock
+README.md
+.formatter.exs

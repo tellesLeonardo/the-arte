@@ -1,8 +1,107 @@
 <style>
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  <%# padding: 10px; %>
+  background: #f3e5f5;
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  text-align: center;
+  background: #ab47bc;
+}
+
+.header h1 {
+  font-size: 50px;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 100%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  background-color: #f1f1f1;
+  padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+  background-color: #FAFAFA ;
+  padding: 20px;
+  margin-top: 20px;
+}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+}
+
+
     div.scrollHorizontal {
         background-color: #B19Cd9;
         overflow: auto;
         white-space: nowrap;
+        border: 2px solid black;
+
     }
 
     div.scrollHorizontal a{
@@ -12,42 +111,125 @@
     div.scrollHorizontal a:hover {
         background-color: #6A0DAD;
     }
+
+    div.tamanho{
+        height:400px;
+        width:400px;
+    }
+
+    div.format_img img{
+        border: 8px solid white;
+        box-shadow: 1px 1px 4px black;
+
+    }
+
+    div.format_img img{
+        width: 100%;
+        height: 100%;
+    }
+
+    .teste{
+    }
 </style>
+</head>
+<body>
 
-<h1>page principal</h1>
-
-<strong>artistas:</strong>
- 
- <div class="scrollHorizontal" >
-    <a href="artista/1"><h6>Leonardo</h6><img src= "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT2pTMAGA_M70YTjLscuRAh3AnUxR9yHZqVPPTUUwToWv-41JDJ"></a> 
-    <a href="artista/2"><h6>Leo</h6><img src= "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQJm9DVBZYqTAHN6whYz7sSvnqPVnJnc-nRVrSutWfFUulsVY90"></a>
-     <a href="artista/1"><h6>Leonardo</h6><img src= "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT2pTMAGA_M70YTjLscuRAh3AnUxR9yHZqVPPTUUwToWv-41JDJ"></a> 
-    <a href="artista/2"><h6>Leo</h6><img src= "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQJm9DVBZYqTAHN6whYz7sSvnqPVnJnc-nRVrSutWfFUulsVY90"></a>
-     <a href="artista/1"><h6>Leonardo</h6><img src= "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT2pTMAGA_M70YTjLscuRAh3AnUxR9yHZqVPPTUUwToWv-41JDJ"></a> 
-    <a href="artista/2"><h6>Leo</h6><img src= "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQJm9DVBZYqTAHN6whYz7sSvnqPVnJnc-nRVrSutWfFUulsVY90"></a>
+<div class="header">
+  <h1 style="color: #f3e5f5 ;">Museu comunitário</h1>
+  <p style="color: #e1bee7;">Feito para qualquer pessoa expor sua arte</p>
 </div>
 
 
-
-
-<%# <a class="log-in-form-v3-right-row__button log-in-form-v3-right-row__button--google flex flex-row align-center justify-content-start mb-15" id="000-button_user-login_social-login-picker_google" href="/cpanel-login/oauth/google" data-no-instant="">
-<img src="//www.000webhost.com/static/default.000webhost.com/images/cpanel-login-v2/google-social-new.svg" alt="logotipo do google" class="log-in-form-v3-right-row__image log-in-form-v3-right-row__image--google">
-<div class="log-in-form-v3-right-row__text-holder log-in-form-v3-right-row__text-holder--google justify-center align-center flex full-width text-white">
-<span class="log-in-form-v3-right-row-text-holder__text log-in-form-v3-right-row-text-holder__text--en text-bold"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-</span>
-</div>
-</a> %>
-
-
-<%# <div class="flex flex-column justify-content-center">
-    <div class="log-in-form-v3-right-row__text-holder log-in-form-v3-right-row__text-holder--hostinger justify-center align-center flex full-width text-white">
+<div class="row">
+  <div class="leftcolumn">
+  
+    <div class="card">
+      <h2>Motivação da criação da plataforma</h2>
+      <h6> Leonardo Telles: "Tudo por amigos e pelo conhecimento"</h6>
+      <%# <div class="fakeimg" style="height:200px;">Image</div> %>
+      <p style="font-size: medium"><strong> Imperdiet cum, magna tellus neque, pede nibh feugiat porttitor lectus dui fusce. Neque morbi tincidunt sequi, turpis sit quis sit elit turpis, sodales dis, sed ac sit massa, lorem dignissim sodales suscipit. Aenean laoreet purus, viverra vestibulum sit, liberte pelellos et sed mauris, iaculis mollis nunc vitae quam, tempus accusan tenta phasellus urna urna arcu. Se a moléstia é dolorosa, mas não é consectetuer, orci vitae sollicitudin arcu ut, mauris tellus purus consectetuer ipsum arcu morbi, amet justo, tellus mauris ut as elgest non. Blandit tellus est iaculis, lectus est tortor sociis maecenas nec justo, em suscipit lobortis nisl, lorem quis in duis quam facilisis. Lorem ipsum dolor sente-se entre, pellentesque nonummy, pellentesque ut inteiro tristique libero arcu quia, magna pellentesque. Magnis dictum wisi em ultrassom ac. Ipsum lacus ac mollis vel, morbi metus nam tincidunt, dictum felis laoreet erat pulvinar. Nullam scelerisque praesent porta vitae, vestibulum aut nibh vestibulum. Id et etiam présent a tristique, ipsum non massa nunc aliquam, nec wisi tincidunt at at sit, orci suspendisse. Nulla perferendis eleifend molestie, donec erat et, imperdiet lectus adipiscing at. Tempore aenean consectetur molestie varius urna. Tellus e ue quam, sed accumsan felis, nullam morbi is montes non nullam elementum, sodales libero. Turpis mollis, lobortis tristique fusce fermentum, cursus amet neque, quisque dolor inteiro inteiro justo ipsum. Aliquam interdum quis ante vitae, pulvinar suspendisse quis</strong></p>
     </div>
-        </a>
-        <a class="log-in-form-v3-right-row__button log-in-form-v3-right-row__button--facebook flex flex-row align-center justify-content-start mb-15" id="000-button_user-login_social-login-picker_facebook" href="/cpanel-login/oauth/facebook" data-no-instant="">
-        <img src="//www.000webhost.com/static/default.000webhost.com/images/cpanel-login-v2/facebook-social-new.svg" alt="Logo do facebook" class="log-in-form-v3-right-row__image log-in-form-v3-right-row__image--facebook">
-        </a>
-        <br>
-        <a class="log-in-form-v3-right-row__button log-in-form-v3-right-row__button--google flex flex-row align-center justify-content-start mb-15" id="000-button_user-login_social-login-picker_google" href="/cpanel-login/oauth/google" data-no-instant="">
-        <img src="//www.000webhost.com/static/default.000webhost.com/images/cpanel-login-v2/google-social-new.svg" alt="logotipo do google" class="log-in-form-v3-right-row__image log-in-form-v3-right-row__image--google">
-    </a>
-</div> %>
+
+    <div class="card">
+    <h2>artistas</h2>
+    <h5>Miniatura dos artistas</h5>
+    <p style=" font-weight: bold;  font-size: medium">temos imagens feitos por artistas que estão cadastrados em nossa plataforma logo acima. clickando em qualquer imagem verá mais obras dos artistas publicadas</p>
+    <div class="fakeimg scrollHorizontal">
+            <div class="tamanho format_img">
+            <%= for artista <- @artistas do  %>
+                <a href="artista/<%= artista.id %>">
+                    <h6><%= artista.nome %></h6><img src="<%= artista.miniatura_art %>">
+                </a>
+            <% end %>
+        </div>     
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<%# <style>
+    div.scrollHorizontal {
+        background-color: #B19Cd9;
+        overflow: auto;
+        white-space: nowrap;
+
+    }
+
+    div.scrollHorizontal a{
+        display: inline-block;
+        padding: 2px 10px;
+    }
+    div.scrollHorizontal a:hover {
+        background-color: #6A0DAD;
+    }
+
+    div.tamanho{
+        height:400px;
+        width:400px;
+    }
+
+    div.format_img img{
+        border: 8px solid white;
+        box-shadow: 1px 1px 4px black;
+
+    }
+
+    div.format_img img{
+        width: 100%;
+        height: 100%;
+    }
+
+    .teste{
+    }
+
+</style>
+%>
+    <%# <div class="format_img teste">
+        <p></p>
+    </div> %>
+
+<%# <h1>Museu de arte comunitario</h1> %>
+
+<%# <strong>artistas:</strong>
+ 
+ <div class="scrollHorizontal " >
+    <div class="tamanho format_img"> %>
+    <%# <%= for artista <- @artistas do  %> 
+        <%# <a href="artista/<%= artista.id">  %>
+            <%# <h6><%= artista.nome< %>
+                <%# /h6><img src="<%= artista.miniatura_art"> %>
+        <%# </a> %>
+    <%# <% end %> 
+    <%# </div>
+</div>
+  %>

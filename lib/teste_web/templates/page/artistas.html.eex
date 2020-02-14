@@ -1,28 +1,192 @@
-<h3>page artisas</h3>
-<div class ="form_group"> 
-    informacão do artista -> 
-    <p>
-        <%= @info[:nome]%> <br>
-        <%= @info[:nome_artistico]%> <br>
-        <%= @info[:contato]%> <br>
-        obra_principal -> <p>
-            <img src= <%= @info[:obra_principal]%>> <br> 
-            </p>
-    </p>
+<style>
 
-    obras: 
-    <%# <%= @info[:nome]%> <br> 
-    <%= for obras <- @obras do %> 
-    nome: <%= obras.nome_img%> <br>
-    descricao:   <%= obras.descricao%> <br>
-    <img src=  <%= obras.link_img %> > <br>
-    <% end %>
-    
-  
+/* Header/Blog Title */
+.header {
+    padding: 5px;
+    text-align: center;
+    background: #ab47bc;
+}
+body {
+    font-family: Arial;
+    <%# padding: 10px; %>
+    background: #f3e5f5;
+}
+
+.header h1 {
+    font-size: 40px;
+}
+
+.rightcolumn {
+  float: right;
+  width: 28%;
+  height: 26%;
+  margin-top: 10px;
+  margin-right: 10px;
+  background-color: white;
+  padding: 5px;
+  box-shadow: 1px 1px 4px black;
+}
+.leftcolum {
+  float: left;
+  width: 97%;
+  height: 60%;
+  margin-left: 20px;
+  margin-top: 10px;
+  margin-right: 5px;
+  background-color: white;
+  <%# padding: 5px; %>
+  box-shadow: 2px 2px 6px black;
+}
+.leftcolum h3{
+    margin-top: 20px;
+    margin-left: 60px;
+    color: #8904B1;
+    font-size: 60px;
+}
+.centro{
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-top:-50px;
+    margin-left:-50px;
+}
+
+.card {
+    background-color: white;
+    padding: 10px;
+    margin-top: 10px;
+    width: 70%;
+
+}
+.moldure {
+    display: block;
+    box-shadow: 1px 1px 6px black;
+    background-color: white;
+    padding: 10px;
+    margin-left: 30px;
+    width: 95%;
+
+}
+
+.info_artista{
+    width:30%;
+    height:30%;
+    <%# border: 2px solid black; %>
+}
+
+.info_artista h1 {
+    font-size: 30px;
+}
+
+.info_artista dt {
+    font-size: 18px;
+    color: #0B0B61;
+    margin-left: 8px;
+}
+
+.info_artista dd {
+    margin-left: 20px;
+    color: #08088A;
+    font-size: 20px;
+}
+
+.descricao strong{
+    font-size: 18px;
+    color: #0B0B61;
+    margin-left: 8px;
+}
+
+.descricao p{
+    margin-left: 18px;
+    color: #08088A;
+    font-size: 14px;
+    white-space: nowrap;
+    <%# border-box %>
+}
+
+div.estile{
+    height: 100%;
+    width: 100%;
+}
+
+div.estile img{
+    box-shadow: 1px 1px 1px black;
+    margin-top: 30px;
+    margin: 10px;
+    margin-left: 35px;
+    border-radius: 100%;
+    width: 80%;
+    height: 80%;
+}
+
+div.describe h5{
+    text-align: center;
+    font-size: 25px;
+    <%# margin-left: 22px; %>
+    color: #08088A;
+}
+
+.newcard{
+    width:50%;
+    height:50%;
+}
+</style>
+
+
+<div class="header">
+  <h1 style="color: #f3e5f5 ;">Artista  <%= @info[:nome_artista]%> </h1>
+  <p style="color: #e1bee7;">explore as arte dele </p>
 </div>
 
-<%# # https://i.pinimg.com/originals/e4/7d/7e/e47d7ee351636f267a193419aaeaa084.jpg  %>
 
 
 
+<div class="rightcolumn">
+    <div class="estile">
+        <div class="describe"><h5>Icone <%= @info[:nome_artista]%></h5></div>
+        <img src="<%= @info[:miniatura_art] %>">
+    </div>
+</div>
+
+<div class="card">
+
+    <h2>Informações pessoais</h2>
+    <div class= "info_artista">
+        <dt>Nome<dt>
+        <dd><%= @info[:nome]%><dd>
+
+        <dt>Nome artístico<dt>
+        <dd><%= @info[:nome_artista]%><dd>
+
+        <dt>Email<dt>
+        <dd><%= @info[:email]%></dd>
+
+        <div class="descricao">
+            <strong>descricao</strong>
+            <p><%= @info[:descricao]%></p>
+        </div>
+    </div>
+</div>
+    
+
+
+<div class="leftcolum">
+    <h3>obras:</h3>
+    
+    <div class ="form_group moldure"> 
+    <%= for obras <- @obras do %> 
+        <div class="newcard">
+        <img src=  "<%= obras.link_img %>" > <br>
+        <%# nome: <%= obras.nome_img%> <br> %>
+        <%# descricao:   <%= obras.descricao%> <br> %>
+    <% end %>
+  
+        
+    
+    </div>
+<div>
+
+
+
+      
   

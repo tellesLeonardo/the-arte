@@ -1,26 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+      <title>Museu Da arte</title>
     <meta charset="utf-8"/>
-    <%# <meta name="viewport" content="width=device-width, initial-scale=1"> %>
+    <meta name="description" content="Vemos aqui uma coleção de belas artes e um meio de qualquer promover sua arte">
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    <style>
+    .footer {
+      position: fixed;
+      background: #dd99ff;
+      bottom: 0px;
+      left: 0px;
+      right: 0px;
+      margin-bottom: 0px;
+    }
+
+    .container{
+    padding-right: 0px!important;
+    padding-left: 0px!important;
+    <%# float: left; %>
+    }
+
+    .cor{
+      color: #000
+    }
+    body {
+      height: 1209px;
+      margin: 0;
+      padding: 0;
+    } 
+
+    div a img{
+        margin: 1px;
+        width: 25%;
+        height: 25%;
+    }
+
+    </style>
   </head>
   <body>
     <nav class="purple">
       <div class="nav-wrapper">
-        <a href="/index" class="brand-logo">Logo</a>
+      <div>
+        <a href="/index" class="brand-logo"><img src="data:image/png;base64,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"></a>
+      </div>  
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href="/historia">historia da arte</a></li>
-          <li><a href="/tentativa">quer colocar sua obra</a></li>
+          <li><a href="/tentativa">Divulgar Obra</a></li>
         </ul>
-      </div>
+        </div>
     </nav>
-    <main role="main" class="container">
-      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+
       <%= render @view_module, @view_template, assigns %>
-    </main>
     <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script> 
+  
+  <footer class="page-footer font-small special-color-dark pt-4 footer">
+
+    <div class="footer-copyright text-center py-3" style="font-size: 15px">"A esperança é o unico bem comum a todos os homens"- Tales de mileto
+    </div>
+
+  </footer>
+
   </body>
 </html>
+
+
