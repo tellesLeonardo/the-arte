@@ -26,7 +26,7 @@ defmodule TesteWeb.PageController do
     |> render("index.html", %{artistas: arte})
   end
 
-  def show(conn, params) do
+  def show(conn, _params) do
     conn
     |> put_status(200)
     |> render("historia.html")
