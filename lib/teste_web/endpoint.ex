@@ -31,7 +31,6 @@ defmodule TesteWeb.Endpoint do
     pass: ["*/*"],
     json_decoder: Phoenix.json_library()
 
-    
   plug Plug.MethodOverride
   plug Plug.Head
 
@@ -43,7 +42,7 @@ defmodule TesteWeb.Endpoint do
     key: "_teste_key",
     signing_salt: "a7U3P2rJ"
 
-  plug Pow.Plug.Session, otp_app: :teste  
+  plug Pow.Plug.Session, otp_app: :teste
 
   plug TesteWeb.Router
 end

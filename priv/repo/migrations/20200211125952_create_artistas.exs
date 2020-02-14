@@ -12,6 +12,5 @@ defmodule Teste.Repo.Migrations.CreateArtistas do
 
       timestamps()
     end
-
   end
 end

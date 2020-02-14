@@ -2,7 +2,6 @@ defmodule TesteWeb.Router do
   use TesteWeb, :router
   use Pow.Phoenix.Router
 
-
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
@@ -20,8 +19,6 @@ defmodule TesteWeb.Router do
       error_handler: Pow.Phoenix.PlugErrorHandler
   end
 
-
-
   scope "/", TesteWeb do
     pipe_through :browser
 
@@ -34,7 +31,6 @@ defmodule TesteWeb.Router do
     post "/tentativa", PageController, :create
     post "/save", PageController, :save_cad
     post "/login", PageController, :login_user
-
   end
 
   # Other scopes may use custom stacks.

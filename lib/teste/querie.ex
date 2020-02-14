@@ -3,24 +3,22 @@ defmodule Teste.Querie do
   alias Teste.{Repo, Imagem, Artista}
 
   def artista(id) do
-    query =
-      Artista
-      |> where([art], art.id == ^id)
-      |> Repo.all()
-      |> Enum.map(fn map -> drop_all(map) end)
-      |> case do
-        [] -> nil
-        query -> hd(query)
-      end
+    Artista
+    |> where([art], art.id == ^id)
+    |> Repo.all()
+    |> Enum.map(fn map -> drop_all(map) end)
+    |> case do
+      [] -> nil
+      query -> hd(query)
+    end
   end
 
   def obras(id) do
     try do
-      query =
-        Imagem
-        |> where([img], img.artista_id == ^id)
-        |> Repo.all()
-        |> Enum.map(fn map -> drop_all(map) end)
+      Imagem
+      |> where([img], img.artista_id == ^id)
+      |> Repo.all()
+      |> Enum.map(fn map -> drop_all(map) end)
     rescue
       Ecto.Query.CastError -> false
       ArgumentError -> false
@@ -34,9 +32,8 @@ defmodule Teste.Querie do
 
   def art() do
     Repo.all(Artista)
-    |>Enum.map(fn art -> drop_all(art) end)
+    |> Enum.map(fn art -> drop_all(art) end)
   end
-
 
   def inser() do
     Repo.insert(%Artista{
@@ -47,6 +44,4 @@ defmodule Teste.Querie do
       nome_artista: "nome_art_cad"
     })
   end
-
-
 end
