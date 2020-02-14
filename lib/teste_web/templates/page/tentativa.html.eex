@@ -1,0 +1,10 @@
+<h3>Parabéns...</h3><strong>por vir compartilhar sua obra com a gente</strong>
+
+<%=  form_for @changeset, Routes.page_path(@conn, :create), fn f -> %>
+    <%= text_input f, :nome_img,placeholder: "coloque o nome da imagem", id: "nome_img", class: "form-control", required: ""%>
+    <%= text_input f, :descricao,placeholder: "coloque a descricao da imagem", id: "descricao", class: "form-control" %> 
+    <%= text_input f, :link_img,placeholder: "coloque o link da imagem", id: "link_img", class: "form-control" %>
+    <%= text_input f, :nome_art,placeholder: "coloque o nome do artista", default: "leo",id: "nome_art", class: "form-control" %> 
+
+    <%= submit "enviar informações", class: "btn btn-primary" %>
+<%end %>

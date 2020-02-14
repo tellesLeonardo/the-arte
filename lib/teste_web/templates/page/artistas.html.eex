@@ -1,0 +1,28 @@
+<h3>page artisas</h3>
+<div class ="form_group"> 
+    informacão do artista -> 
+    <p>
+        <%= @info[:nome]%> <br>
+        <%= @info[:nome_artistico]%> <br>
+        <%= @info[:contato]%> <br>
+        obra_principal -> <p>
+            <img src= <%= @info[:obra_principal]%>> <br> 
+            </p>
+    </p>
+
+    obras: 
+    <%# <%= @info[:nome]%> <br> 
+    <%= for obras <- @obras do %> 
+    nome: <%= obras.nome_img%> <br>
+    descricao:   <%= obras.descricao%> <br>
+    <img src=  <%= obras.link_img %> > <br>
+    <% end %>
+    
+  
+</div>
+
+<%# # https://i.pinimg.com/originals/e4/7d/7e/e47d7ee351636f267a193419aaeaa084.jpg  %>
+
+
+
+  

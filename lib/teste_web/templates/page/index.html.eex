@@ -1,0 +1,53 @@
+<style>
+    div.scrollHorizontal {
+        background-color: #B19Cd9;
+        overflow: auto;
+        white-space: nowrap;
+    }
+
+    div.scrollHorizontal a{
+        display: inline-block;
+        padding: 2px 10px;
+    }
+    div.scrollHorizontal a:hover {
+        background-color: #6A0DAD;
+    }
+</style>
+
+<h1>page principal</h1>
+
+<strong>artistas:</strong>
+ 
+ <div class="scrollHorizontal" >
+    <a href="artista/1"><h6>Leonardo</h6><img src= "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT2pTMAGA_M70YTjLscuRAh3AnUxR9yHZqVPPTUUwToWv-41JDJ"></a> 
+    <a href="artista/2"><h6>Leo</h6><img src= "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQJm9DVBZYqTAHN6whYz7sSvnqPVnJnc-nRVrSutWfFUulsVY90"></a>
+     <a href="artista/1"><h6>Leonardo</h6><img src= "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT2pTMAGA_M70YTjLscuRAh3AnUxR9yHZqVPPTUUwToWv-41JDJ"></a> 
+    <a href="artista/2"><h6>Leo</h6><img src= "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQJm9DVBZYqTAHN6whYz7sSvnqPVnJnc-nRVrSutWfFUulsVY90"></a>
+     <a href="artista/1"><h6>Leonardo</h6><img src= "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT2pTMAGA_M70YTjLscuRAh3AnUxR9yHZqVPPTUUwToWv-41JDJ"></a> 
+    <a href="artista/2"><h6>Leo</h6><img src= "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQJm9DVBZYqTAHN6whYz7sSvnqPVnJnc-nRVrSutWfFUulsVY90"></a>
+</div>
+
+
+
+
+<%# <a class="log-in-form-v3-right-row__button log-in-form-v3-right-row__button--google flex flex-row align-center justify-content-start mb-15" id="000-button_user-login_social-login-picker_google" href="/cpanel-login/oauth/google" data-no-instant="">
+<img src="//www.000webhost.com/static/default.000webhost.com/images/cpanel-login-v2/google-social-new.svg" alt="logotipo do google" class="log-in-form-v3-right-row__image log-in-form-v3-right-row__image--google">
+<div class="log-in-form-v3-right-row__text-holder log-in-form-v3-right-row__text-holder--google justify-center align-center flex full-width text-white">
+<span class="log-in-form-v3-right-row-text-holder__text log-in-form-v3-right-row-text-holder__text--en text-bold"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+</span>
+</div>
+</a> %>
+
+
+<%# <div class="flex flex-column justify-content-center">
+    <div class="log-in-form-v3-right-row__text-holder log-in-form-v3-right-row__text-holder--hostinger justify-center align-center flex full-width text-white">
+    </div>
+        </a>
+        <a class="log-in-form-v3-right-row__button log-in-form-v3-right-row__button--facebook flex flex-row align-center justify-content-start mb-15" id="000-button_user-login_social-login-picker_facebook" href="/cpanel-login/oauth/facebook" data-no-instant="">
+        <img src="//www.000webhost.com/static/default.000webhost.com/images/cpanel-login-v2/facebook-social-new.svg" alt="Logo do facebook" class="log-in-form-v3-right-row__image log-in-form-v3-right-row__image--facebook">
+        </a>
+        <br>
+        <a class="log-in-form-v3-right-row__button log-in-form-v3-right-row__button--google flex flex-row align-center justify-content-start mb-15" id="000-button_user-login_social-login-picker_google" href="/cpanel-login/oauth/google" data-no-instant="">
+        <img src="//www.000webhost.com/static/default.000webhost.com/images/cpanel-login-v2/google-social-new.svg" alt="logotipo do google" class="log-in-form-v3-right-row__image log-in-form-v3-right-row__image--google">
+    </a>
+</div> %>

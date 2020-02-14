@@ -1,0 +1,44 @@
+<style>
+div.margem {
+    width: 400px ;
+    <%# background: #D3D3D3; %>
+    <%# color: #000000; %>
+    height: 1000px;
+    border: 1px solid #000;
+}
+</style>
+
+cadastro
+<div class="margem" >
+<%=  form_for @changeset, Routes.page_path(@conn, :save_cad), fn cad -> %>
+    <%= text_input cad, :nome_cad ,placeholder: "holder", id: "nome",class: "form-control", required: "" %>
+    <%= text_input cad, :senha_cad ,placeholder: "holder",id: "senha",class: "form-control",minlength: 6, required: "coloca" %>
+
+    <%= submit "enviar informações", class: "btn btn-primary" %>
+
+
+  <% end %>
+
+<div>
+
+
+<a href="/login">login</a>
+
+
+
+
+
+
+
+<%# <div class="flex flex-column justify-content-center">
+    <div class="log-in-form-v3-right-row__text-holder log-in-form-v3-right-row__text-holder--hostinger justify-center align-center flex full-width text-white">
+    </div>
+        </a>
+        <a class="log-in-form-v3-right-row__button log-in-form-v3-right-row__button--facebook flex flex-row align-center justify-content-start mb-15" id="000-button_user-login_social-login-picker_facebook" href="/cpanel-login/oauth/facebook" data-no-instant="">
+        <img src="//www.000webhost.com/static/default.000webhost.com/images/cpanel-login-v2/facebook-social-new.svg" alt="Logo do facebook" class="log-in-form-v3-right-row__image log-in-form-v3-right-row__image--facebook">
+        </a>
+        <br>
+        <a class="log-in-form-v3-right-row__button log-in-form-v3-right-row__button--google flex flex-row align-center justify-content-start mb-15" id="000-button_user-login_social-login-picker_google" href="/cpanel-login/oauth/google" data-no-instant="">
+        <img src="//www.000webhost.com/static/default.000webhost.com/images/cpanel-login-v2/google-social-new.svg" alt="logotipo do google" class="log-in-form-v3-right-row__image log-in-form-v3-right-row__image--google">
+    </a>
+</div> %>
