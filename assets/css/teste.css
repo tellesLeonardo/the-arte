@@ -1,0 +1,14 @@
+div.scrollHorizontal {
+    background-color: #B19Cd9;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+div.scrollHorizontal a{
+    display: inline-block;
+    padding: 2px 10px;
+}
+div.scrollHorizontal a:hover {
+    background-color: #6A0DAD;
+}
+
