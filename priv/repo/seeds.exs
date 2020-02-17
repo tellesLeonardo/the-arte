@@ -32,14 +32,14 @@ alias Teste.{Repo, Imagem, Artista}
 #       "https://vignette.wikia.nocookie.net/onepiece/images/2/29/Kaido_Anime_Infobox.png/revision/latest/scale-to-width-down/340?cb=20191222142606&path-prefix=pt"
 #   })
 
-Repo.insert(%Imagem{
-  link_img:
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS2yrl6nkTk8IMw9KgSp0MnExywRBzb73x_WST9BqtX6lhw_vhv",
-  descricao:
-    "imagem de um homem que perdeu sua vida e sua amor em um jornada não por vingança e sim pela morte",
-  nome_img: "shichika hachiretsu",
-  artista_id: 1
-})
+# Repo.insert(%Imagem{
+#   link_img:
+#     "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS2yrl6nkTk8IMw9KgSp0MnExywRBzb73x_WST9BqtX6lhw_vhv",
+#   descricao:
+#     "imagem de um homem que perdeu sua vida e sua amor em um jornada não por vingança e sim pela morte",
+#   nome_img: "shichika hachiretsu",
+#   artista_id: 1
+# })
 
 # Repo.insert(%Imagem{
 #   link_img:

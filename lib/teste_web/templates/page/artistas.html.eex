@@ -29,10 +29,11 @@ body {
 .leftcolum {
   float: left;
   width: 97%;
-  height: 60%;
+  height: 70%;
   margin-left: 20px;
   margin-top: 10px;
   margin-right: 5px;
+  margin-bottom: 20px;
   background-color: white;
   <%# padding: 5px; %>
   box-shadow: 2px 2px 6px black;
@@ -59,12 +60,12 @@ body {
 
 }
 .moldure {
-    display: block;
     box-shadow: 1px 1px 6px black;
     background-color: white;
     padding: 10px;
     margin-left: 30px;
     width: 95%;
+    height:85%;
 
 }
 
@@ -127,8 +128,21 @@ div.describe h5{
 }
 
 .newcard{
-    width:50%;
-    height:50%;
+    display: inline;   
+    width:100%;
+    height:100%;
+
+}
+
+.newcard span{
+}
+
+div.scrollHorizontal {
+    background-color: #B19Cd9;
+    overflow-x: scroll;
+    white-space: normal;
+    border: 2px solid black;
+
 }
 </style>
 
@@ -148,9 +162,9 @@ div.describe h5{
     </div>
 </div>
 
-<div class="card">
-
+<div class="card" style="margin-left: 5px;">
     <h2>Informações pessoais</h2>
+    
     <div class= "info_artista">
         <dt>Nome<dt>
         <dd><%= @info[:nome]%><dd>
@@ -161,32 +175,35 @@ div.describe h5{
         <dt>Email<dt>
         <dd><%= @info[:email]%></dd>
 
+      
         <div class="descricao">
             <strong>descricao</strong>
             <p><%= @info[:descricao]%></p>
         </div>
+   
     </div>
 </div>
     
-
-
 <div class="leftcolum">
     <h3>obras:</h3>
     
-    <div class ="form_group moldure"> 
+    <div class ="moldure scrollHorizontal"> 
     <%= for obras <- @obras do %> 
-        <div class="newcard">
-        <img src=  "<%= obras.link_img %>" > <br>
-        <%# nome: <%= obras.nome_img%> <br> %>
-        <%# descricao:   <%= obras.descricao%> <br> %>
+        <div class="newcard ">
+            <img src="<%= obras.link_img %>" style=" width: 400px; height: 380px; border: 5px solid #ebebeb;margin-top: 15px;">
+            
+        </div>
     <% end %>
-  
-        
-    
+       
+
     </div>
 <div>
 
 
 
-      
+
+
+<%# nome: <%= obras.nome_img%> 
+<%# descricao:   <%= obras.descricao%> 
   
+<!-- <span> <img src="<= obras.link_img %>"><h6 style=" font-size: large color: black;"><= obras.nome_img%></h6><h6 style=" font-size: medium; color: black;"><=obras.descricao%></h6></span><span> <img src="<= obras.link_img %>"><h6 style=" font-size: large color: black;"><= obras.nome_img%></h6><h6 style=" font-size: medium; color: black;"><=obras.descricao%></h6></span> -->

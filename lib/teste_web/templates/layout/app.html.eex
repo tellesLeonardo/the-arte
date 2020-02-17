@@ -11,14 +11,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     
     <style>
-    .footer {
-      position: fixed;
-      background: #dd99ff;
-      bottom: 0px;
-      left: 0px;
-      right: 0px;
-      margin-bottom: 0px;
-    }
+
 
     .container{
     padding-right: 0px!important;
@@ -30,7 +23,8 @@
       color: #000
     }
     body {
-      height: 1209px;
+      width: 100%;
+      height: 1050px;
       margin: 0;
       padding: 0;
     } 
@@ -59,12 +53,7 @@
       <%= render @view_module, @view_template, assigns %>
     <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script> 
   
-  <footer class="page-footer font-small special-color-dark pt-4 footer">
 
-    <div class="footer-copyright text-center py-3" style="font-size: 15px">"A esperança é o unico bem comum a todos os homens"- Tales de mileto
-    </div>
-
-  </footer>
 
   </body>
 </html>

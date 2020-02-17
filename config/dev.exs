@@ -2,10 +2,10 @@ use Mix.Config
 
 # Configure your database
 config :teste, Teste.Repo,
-  username: "root",
-  password: "",
-  database: "imgTeste",
-  hostname: "localhost",
+  username: "sac",
+  password: "4lertr4ck",
+  database: "site_ideal",
+  hostname: "192.168.0.46",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
 

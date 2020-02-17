@@ -8,18 +8,18 @@ div.margem {
 }
 
 .full-height {
-    position: absolute;
+    float: left;
     width: 30%;
-    height: 110%;
+    height: 100%;
     border: 2px solid #ddccff;
 }
 
 div.cor_ideal {
+    height: 100%;
     background: #eee6ff;
-    <%# background: #ddccff; %>
     font-family: 'Noto Sans KR', sans-serif;
 }
-.img{
+.img img{
     width: 70%;
     height: 100%;
     float: right;
@@ -29,79 +29,98 @@ div.cor_ideal {
     height: 100%;
 }
 
-.img img{
+.img{
     width: 100%;
     height: 100%;
 }
+    .footer {
+      position: relative;
+      background: #dd99ff;
+      bottom: 0px;
+      left: 0px;
+      right: 0px;
+      margin-bottom: 0px;
+    }
 
 </style>
 
-<div class="super">
-
-<div class="full-height cor_ideal">
-    <div class="container">
-        <strong><%= @conteudo%> 
-        </strong>
-    </div> 
-
-    
-        <div class ="jumbotron cor_ideal horizontal">
-        <label><h3>cadastro</h3></label>
-
-    <%=  form_for @changeset, Routes.page_path(@conn, :save_cad),[multipart: true],fn cad -> %>
-        <div class="form-group">
-            <label>Nome *</label>
-            <%= text_input cad, :nome_cad , id: "nome",class: "form-control", required: "" %>
-        </div>
-
-        <div class="form-group">
-            <label>Senha *</label>
-            <%= password_input cad, :senha_cad ,id: "senha",class: "form-control" , minlength: 5, required: "coloca"%>
-        </div>
-
-        <div class="form-group">
-            <label>email</label>
-            <%= email_input cad, :email_cad ,id: "email",class: "form-control" %>
-        </div>
-
-        <div class="form-group">
-            <label>nome de artista *</label>
-            <%= text_input cad, :nome_art_cad ,id: "nome_art",class: "form-control" , required: ""%>
-        </div>
-
-        <div class="form-group">
-            <label>descricao</label>
-            <%= text_input cad, :descricao_cad ,id: "descricao",class: "form-control" %>
-        </div>
-
-        <%# <div class="form-group">
-            <label>miniatura</label>
-            <%= file_input cad, :miniatura_cad ,id: "miniatura",class: "form-control" %>
-        <%# </div> %>
-
-        <div class="form-group">
-            <label>miniatura *</label>
-            <%= text_input cad, :miniatura_cad ,id: "miniatura",class: "form-control" , required: ""%>
-        </div>
-        
-        <div class="form-group">
-            <button type="submit" class="btn btn-success">envio</button>
-            <button type="button" class="btn btn-secondary" onClick= "redirect()">login</button>
-
-        </div>
-
-        <% end %>
-    </div >
-</div>
+<div class="super img">
+    <div class="full-height cor_ideal">
+        <div class="container">
+            <strong><%= @conteudo%> 
+            </strong>
+        </div> 
 
 
-    <div class="img">
-        <%# <img src="https://wallpapercave.com/wp/wp3122115.jpg"> %>
-        <img src="https://c.wallhere.com/photos/bb/38/2560x1600_px_abstract_face_Jared_Nickerson_profile_purple_Background-782216.jpg!d">
+ <div class ="jumbotron"  style="background: #eee6ff;">
+            <label><h3>cadastro</h3></label>
+
+        <%=  form_for @changeset, Routes.page_path(@conn, :save_cad),[multipart: true],fn cad -> %>
+            <div class="form-group">
+                <label>Nome *</label>
+                <%= text_input cad, :nome_cad , id: "nome",class: "form-control", required: "" %>
+            </div>
+
+            <div class="form-group">
+                <label>Senha *</label>
+                <%= password_input cad, :senha_cad ,id: "senha",class: "form-control" , minlength: 5, required: "coloca"%>
+            </div>
+
+            <div class="form-group">
+                <label>email</label>
+                <%= email_input cad, :email_cad ,id: "email",class: "form-control" %>
+            </div>
+
+            <div class="form-group">
+                <label>nome de artista *</label>
+                <%= text_input cad, :nome_art_cad ,id: "nome_art",class: "form-control" , required: ""%>
+            </div>
+
+            <div class="form-group">
+                <label>descricao</label>
+                <%= text_input cad, :descricao_cad ,id: "descricao",class: "form-control" %>
+            </div>
+
+            <%# <div class="form-group">
+                <label>miniatura</label>
+                <%= file_input cad, :miniatura_cad ,id: "miniatura",class: "form-control" %>
+            <%# </div> %>
+
+            <div class="form-group">
+                <label>miniatura</label>
+                <%= text_input cad, :miniatura_cad ,id: "miniatura",class: "form-control" %>
+            </div>
+            
+            <div class="form-group">
+                <button type="submit" class="btn btn-success">envio</button>
+                <button type="button" class="btn btn-secondary" onClick= "redirect()">login</button>
+
+            </div>
+
+            <% end %>
+        </div >
+
+
+
+
+
     </div>
 
+
+    <img src="https://c.wallhere.com/photos/bb/38/2560x1600_px_abstract_face_Jared_Nickerson_profile_purple_Background-782216.jpg!d">
+ 
+
 </div>
 
+
+
+ <footer class="page-footer font-small special-color-dark pt-4 footer"> 
+    <div class="footer-copyright text-center py-3" style="font-size: 15px">"A esperança é o unico bem comum a todos os homens"- Tales de mileto
+    </div>
+
+</footer> 
+
+        <%# <img src="https://wallpapercave.com/wp/wp3122115.jpg"> %>
 
 <%# <div class="flex flex-column justify-content-center">
     <div class="log-in-form-v3-right-row__text-holder log-in-form-v3-right-row__text-holder--hostinger justify-center align-center flex full-width text-white">

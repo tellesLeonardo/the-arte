@@ -10,11 +10,13 @@ div.position{
     height:100%;
 }
 
+
+
 div.position img{
-    position: absolute; 
     width:100%;
     height:100%;
 }
+
 
 div.relative{
     margin: 0 auto;
@@ -23,14 +25,31 @@ div.relative{
 div.container4 {
     height: 10em;
     position: relative }
+
 div.container  {
-    margin: 0;
-    <%# background: yellow; %>
-    position: absolute;
-    top: 350%;
+    margin: 10px;
+    position: relative;
+    top: -50%;
     left: 50%;
-    margin-right: -50%;
     transform: translate(-50%, -50%) }
+
+.full-height {
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    border: 2px solid #ddccff;
+}
+
+    .footer {
+      position: relative;
+      background: #dd99ff;
+      bottom: 0px;
+      left: 0px;
+      right: 0px;
+      margin-bottom: 0px;
+    }
+
+
 
 </style>
 
@@ -41,36 +60,38 @@ div.container  {
 
 
 <div class="position">
-<img src="https://images3.alphacoders.com/218/thumb-1920-218717.jpg">
+    <img src="https://images3.alphacoders.com/218/thumb-1920-218717.jpg" width="100%" height="100%">
 
-    <div class=container4>
-        <div class="container">
-        <div class ="jumbotron cor_ideal col-12">
-        <dt><h1>Coloque sua Obra<h1></dt>
+    <div class="full-height container cor_ideal">
+        <div class ="jumbotron col-12" style="background: #eee6ff;">
+            <dt><h1>Coloque sua Obra<h1></dt>
             <dd>venha compartilhar sua obra conosco</dd>
-        <br>
+            <br>
 
-        <label><h6>informações:</h6></label>
-        <%=  form_for @changeset, Routes.page_path(@conn, :create), fn f -> %>
-            <label>Nome da imagem *</label>
-            <%= text_input f, :nome_img,placeholder: "coloque o nome da imagem", id: "nome_img", class: "form-control", required: ""%>
-            <label>Descricao *</label>       
-            <%= text_input f, :descricao,placeholder: "coloque a descricao da imagem", id: "descricao", class: "form-control"%> 
-            <label>Imagem *</label>
-            <%= text_input f, :link_img,placeholder: "coloque o link da imagem", id: "link_img", class: "form-control", required: ""%>
-            <label>Nome artístico *</label>
-            <%= text_input f, :nome_art,placeholder: "coloque o nome do artista",id: "nome_art", class: "form-control" %> 
-            <%= submit "enviar informações", class: "btn btn-success" %>
-        <%end %>
+            <label><h6>informações:</h6></label>
+
+            
+            <%=  form_for @changeset, Routes.page_path(@conn, :create), fn f -> %>
+                <label>Nome da imagem *</label>
+                <%= text_input f, :nome_img,placeholder: "coloque o nome da imagem", id: "nome_img", class: "form-control", required: ""%>
+                <label>Descricao *</label>       
+                <%= text_input f, :descricao,placeholder: "coloque a descricao da imagem", id: "descricao", class: "form-control"%> 
+                <label>Imagem *</label>
+                <%= text_input f, :link_img,placeholder: "coloque o link da imagem", id: "link_img", class: "form-control", required: ""%>
+                <label>Nome artístico *</label>
+                <%= text_input f, :nome_art,placeholder: "coloque o nome do artista",id: "nome_art", class: "form-control" %> 
+                <%= submit "enviar informações", class: "btn btn-success" %>
+            <%end %>
         </div>
+    
     </div>
 
 
 
-
-
-
-
-    </div>
-    <%# <img src="https://images3.alphacoders.com/218/thumb-1920-218717.jpg"> %>
 </div> 
+
+ <footer class="page-footer font-small special-color-dark pt-4 footer"> 
+    <div class="footer-copyright text-center py-3" style="font-size: 15px">"A esperança é o unico bem comum a todos os homens"- Tales de mileto
+    </div>
+
+</footer> 
