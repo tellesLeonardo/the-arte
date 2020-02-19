@@ -190,7 +190,7 @@ div.scrollHorizontal {
     <div class ="moldure scrollHorizontal"> 
     <%= for obras <- @obras do %> 
         <div class="newcard ">
-            <img src="<%= obras.link_img %>" style=" width: 400px; height: 380px; border: 5px solid #ebebeb;margin-top: 15px;">
+            <img src="<%= obras.link_img %>" style=" width: 250px; height: 230px; border: 5px solid #ebebeb;margin-top: 15px;">
             
         </div>
     <% end %>

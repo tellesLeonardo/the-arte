@@ -3,6 +3,7 @@ defmodule TesteWeb.PageController do
   alias Teste.{Repo, Artista, Querie, Imagem, Artista}
   use TesteWeb, :controller
 
+
   def index(conn, _params) do
     artistas = Querie.art()
 
@@ -20,6 +21,7 @@ defmodule TesteWeb.PageController do
             art
         end
       end)
+
 
     conn
     |> put_status(200)
@@ -68,7 +70,7 @@ defmodule TesteWeb.PageController do
     })
 
     conn
-    |> redirect(to: "/index")
+    |> redirect(to: "/tentativa")
   end
 
   def cadastro(conn, params, conteudo \\ nil) do
@@ -120,7 +122,6 @@ defmodule TesteWeb.PageController do
           login(conn, log, "não temos esse usuario cadastrado")
 
         art ->
-
 
           conn
           |> redirect(to: "/index")
