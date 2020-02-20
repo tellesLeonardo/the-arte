@@ -18,10 +18,10 @@ body {
 
 .rightcolumn {
   float: right;
-  width: 28%;
-  height: 26%;
+  width: 35%;
+  height: 36%;
   margin-top: 10px;
-  margin-right: 10px;
+  margin-right: 25px;
   background-color: white;
   padding: 5px;
   box-shadow: 1px 1px 4px black;
@@ -56,7 +56,7 @@ body {
     background-color: white;
     padding: 10px;
     margin-top: 10px;
-    width: 70%;
+    width: 60%;
 
 }
 .moldure {
@@ -100,8 +100,10 @@ body {
 .descricao p{
     margin-left: 18px;
     color: #08088A;
+    width: 100%;
     font-size: 14px;
-    white-space: nowrap;
+    white-space: normal;
+    overflow: auto;
     <%# border-box %>
 }
 
@@ -133,9 +135,16 @@ div.describe h5{
     height:100%;
 
 }
-
-.newcard span{
+.border .newcard img{
+    transition: 2s;
 }
+
+.newcard img:hover{ 
+    filter: grayscale(100%);
+    transform: scale(1.2):
+
+}
+
 
 div.scrollHorizontal {
     background-color: #B19Cd9;
@@ -144,6 +153,30 @@ div.scrollHorizontal {
     border: 2px solid black;
 
 }
+
+.newcard p{
+    border: 1px solid white;
+    display: inline;   
+    color: black;
+
+}
+
+.border {
+    background-color: #E6E6FA; 
+    display: inline-block;  
+    height: 319px;
+    width: 270px;
+    margin: 5px;
+    text-align: center; 
+     
+}
+.border p ::-webkit-scrollbar {
+    height: 2px;
+    border-radius: 10px;
+}
+
+
+
 </style>
 
 
@@ -162,7 +195,7 @@ div.scrollHorizontal {
     </div>
 </div>
 
-<div class="card" style="margin-left: 5px;">
+<div class="card" style="margin-left: 19px;">
     <h2>Informações pessoais</h2>
     
     <div class= "info_artista">
@@ -175,8 +208,7 @@ div.scrollHorizontal {
         <dt>Email<dt>
         <dd><%= @info[:email]%></dd>
 
-      
-        <div class="descricao">
+       <div class="descricao">
             <strong>descricao</strong>
             <p><%= @info[:descricao]%></p>
         </div>
@@ -189,9 +221,16 @@ div.scrollHorizontal {
     
     <div class ="moldure scrollHorizontal"> 
     <%= for obras <- @obras do %> 
-        <div class="newcard ">
-            <img src="<%= obras.link_img %>" style=" width: 250px; height: 230px; border: 5px solid #ebebeb;margin-top: 15px;">
+        <div class="border" style="color: #800080;">
             
+            <div style="overflow: auto; white-space: nowrap; font-size: large; padding: 7px 0px 0px;">
+            <small style="font-size: medium; color: #000;">nome: </small> <%= obras.nome_img %>
+            </div>
+
+            <div class="newcard"> 
+                <a href="<%= obras.link_img %>" data-lightbox=" <%= obras.nome_img %> "><img src="<%= obras.link_img %>" style=" margin-left: 3px;  width: 250px; height: 230px; border: 5px solid #000;margin-top: 15px; "></a>
+            </div>
+            <p style="overflow: auto; white-space: nowrap; padding: 2px 1em 0 1em; font-size: large;"> <small style="font-size: medium; color: #000;">descricao: </small> <%= obras.descricao %></p>
         </div>
     <% end %>
        
@@ -201,9 +240,3 @@ div.scrollHorizontal {
 
 
 
-
-
-<%# nome: <%= obras.nome_img%> 
-<%# descricao:   <%= obras.descricao%> 
-  
-<!-- <span> <img src="<= obras.link_img %>"><h6 style=" font-size: large color: black;"><= obras.nome_img%></h6><h6 style=" font-size: medium; color: black;"><=obras.descricao%></h6></span><span> <img src="<= obras.link_img %>"><h6 style=" font-size: large color: black;"><= obras.nome_img%></h6><h6 style=" font-size: medium; color: black;"><=obras.descricao%></h6></span> -->

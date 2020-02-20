@@ -44,5 +44,9 @@ defmodule TesteWeb.Endpoint do
 
   plug Pow.Plug.Session, otp_app: :teste
 
+  plug Plug.Static,
+    at: "/", from: :qbme, gzip: false,
+    only: ~w(css fonts  js favicon.ico robots.txt)
+
   plug TesteWeb.Router
 end

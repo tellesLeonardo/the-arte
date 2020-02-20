@@ -7,7 +7,7 @@ defmodule Teste.Repo.Migrations.CreateArtistas do
       add :nome_artista, :string
       add :senha, :string
       add :email, :string
-      add :descricao, :text
+      add :descricao, :string
       add :miniatura_art, :text
 
       timestamps()
